@@ -10,3 +10,15 @@ Ball::Ball(float radius, sf::Vector2f position) {
 void Ball::draw(sf::RenderWindow& window) const {
 	window.draw(shape);
 }
+
+sf::FloatRect Ball::getBounds() {
+	return shape.getGlobalBounds();
+}
+
+void Ball::setDirection(float dir) {
+	direction = dir;
+}
+
+void Ball::update(float dt) {
+	shape.move({ 0.f, direction * speed * dt });
+}

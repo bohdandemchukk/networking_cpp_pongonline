@@ -11,12 +11,16 @@ public:
 
 	void draw(sf::RenderWindow& window) const;
 
-	sf::FloatRect getBounds() {
-		return shape.getGlobalBounds();
-	}
+
+	void setDirection(float dir);
+	void update(float dt);
+
+	sf::FloatRect getBounds();
 
 private:
 	sf::CircleShape shape;
+	
+	float direction{ 0.f };
 	float speed{ 400.f };
 };
 

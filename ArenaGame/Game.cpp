@@ -12,15 +12,20 @@ Game::Game()
 
 void Game::update(float deltaTime) {
 
+
 	float leftDir{ 0.f };
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) leftDir -= 1.f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) leftDir += 1.f;
-	rightPlayer.setDirection(leftDir);
+	leftPlayer.setDirection(leftDir);
 
 	float rightDir{ 0.f };
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) rightDir -= 1.f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) rightDir += 1.f;
 	rightPlayer.setDirection(rightDir);
+
+	leftPlayer.update(deltaTime);
+	rightPlayer.update(deltaTime);
+	ball.update(deltaTime);
 
 	float windowHeight{ static_cast<float>(window.getSize().y) };
 	leftPlayer.clamp(windowHeight);
@@ -35,8 +40,6 @@ void Game::run() {
 		render();
 	}
 }
-
-
 
 void Game::processEvents() {
 	while (const auto event = window.pollEvent())

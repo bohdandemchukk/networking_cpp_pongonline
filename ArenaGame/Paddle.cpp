@@ -16,7 +16,7 @@ void Paddle::setDirection(float dir) {
 }
 
 void Paddle::update(float dt) {
-	shape.move({ static_cast<float>(shape.getPosition().x), direction * speed * dt} );
+	shape.move({ 0.f, direction * speed * dt} );
 }
 
 void Paddle::clamp(float windowHeight) {
