@@ -5,23 +5,32 @@
 
 class Ball
 {
-
 public:
+
 	Ball(float radius, sf::Vector2f position);
 
 	void draw(sf::RenderWindow& window) const;
 
+	sf::Vector2f getDirection();
 
-	void setDirection(float dir);
+	void setDirection(sf::Vector2f dir);
 	void update(float dt);
 
-	sf::FloatRect getBounds();
+	void bounceX();
+	void bounceY();
+
+	sf::FloatRect getBounds() const;
+
+	void clamp(float windowHeight);
+
+	float getCenter() const;
 
 private:
-	sf::CircleShape shape;
+	sf::CircleShape m_shape;
 	
-	float direction{ 0.f };
-	float speed{ 400.f };
+	sf::Vector2f m_ballDirection{};
+
+	float m_speed{ 400.f };
 };
 
 

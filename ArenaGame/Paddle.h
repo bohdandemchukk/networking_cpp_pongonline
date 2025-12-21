@@ -8,23 +8,27 @@ class Paddle
 public:
 	Paddle(sf::Vector2f size, sf::Vector2f position);
 
+	float getDirection();
 	void setDirection(float dir);
 	
 	void update(float dt);
 
 
 	sf::FloatRect getBounds() const;
+
+	float getCenter() const;
 	
 	float getSizeY() const;
+
 	void clamp(float deltaTime);
 	
 	void draw(sf::RenderWindow& window) const;
 
 private:
-	float speed{ 300.f };
-	sf::RectangleShape shape{};
+	float m_speed{ 300.f };
+	sf::RectangleShape m_shape{};
 
-	float direction{ 0.f };
+	float m_direction{ 0.f };
 };
 
 

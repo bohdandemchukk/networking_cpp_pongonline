@@ -134,7 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="DebugUtil.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="NormalizeUtil.h" />
     <ClInclude Include="Paddle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

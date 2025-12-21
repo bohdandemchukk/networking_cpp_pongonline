@@ -1,24 +1,54 @@
 #include "Ball.h"
 
 
-Ball::Ball(float radius, sf::Vector2f position) {
-	shape.setRadius(radius);
-	shape.setPosition(position);
+
+Ball::Ball(float radius, sf::Vector2f position)
+{
+	m_shape.setRadius(radius);
+	m_shape.setPosition(position);
+	
 }
 
+sf::Vector2f Ball::getDirection() {
+	return m_ballDirection;
+}
+
+void Ball::setDirection(sf::Vector2f dir) {
+	m_ballDirection = dir;
+}
+
+
+void Ball::clamp(float windowHeight) {
+	if (m_shape.getPosition().y < 0.f) {
+		bounceY();
+	}
+
+	if (m_shape.getPosition().y + m_shape.getRadius() * 2 > windowHeight) {
+		bounceY();
+	}
+}
 
 void Ball::draw(sf::RenderWindow& window) const {
-	window.draw(shape);
+	window.draw(m_shape);
 }
 
-sf::FloatRect Ball::getBounds() {
-	return shape.getGlobalBounds();
+sf::FloatRect Ball::getBounds() const {
+	return m_shape.getGlobalBounds();
 }
 
-void Ball::setDirection(float dir) {
-	direction = dir;
+float Ball::getCenter() const {
+	float position {m_shape.getPosition().y + m_shape.getRadius()};
+	return position;
+}
+
+void Ball::bounceX() {
+	m_ballDirection.x *= -1;
+}
+
+void Ball::bounceY() {
+	m_ballDirection.y *= -1;
 }
 
 void Ball::update(float dt) {
-	shape.move({ 0.f, direction * speed * dt });
+	m_shape.move({ m_ballDirection.x * m_speed * dt, m_ballDirection.y * m_speed * dt });
 }

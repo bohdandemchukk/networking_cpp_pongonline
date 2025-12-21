@@ -5,6 +5,7 @@
 #include "Paddle.h"
 #include "Ball.h"
 
+
 class Game
 {
 public:
@@ -14,7 +15,8 @@ public:
 	void render();
 	void update(float deltaTime);
 	void run();
-
+	
+	sf::Vector2f calculateCollision(const Paddle& paddle, const Ball& ball);
 
 
 private:
@@ -25,6 +27,9 @@ private:
 	Paddle leftPlayer;
 	Paddle rightPlayer;
 	Ball ball;
+
+	bool ballLaunched{ false };
+
 
 };
 
