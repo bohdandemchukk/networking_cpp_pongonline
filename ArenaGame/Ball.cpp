@@ -19,13 +19,21 @@ void Ball::setDirection(sf::Vector2f dir) {
 
 
 void Ball::clamp(float windowHeight) {
-	if (m_shape.getPosition().y < 0.f) {
+
+	auto pos { m_shape.getPosition() };
+	float diameter{ m_shape.getRadius() * 2 };
+
+	if (pos.y < 0.f) {
+		pos.y = 0.f;
 		bounceY();
 	}
 
-	if (m_shape.getPosition().y + m_shape.getRadius() * 2 > windowHeight) {
+	if (pos.y > windowHeight - diameter) {
+		pos.y = windowHeight - diameter;
 		bounceY();
 	}
+
+	m_shape.setPosition(pos);
 }
 
 void Ball::draw(sf::RenderWindow& window) const {

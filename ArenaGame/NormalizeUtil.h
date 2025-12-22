@@ -2,13 +2,8 @@
 #define NORMALIZEUTIL_H
 
 #include <SFML/Graphics.hpp>
+#include <cmath>
 
-sf::Vector2f normalize(sf::Vector2f v) {
-	float len{ sqrt(v.x * v.x + v.y * v.y) };
-
-	if (len != 0.f) v /= len;
-
-	return v;
-}
+sf::Vector2f normalize(sf::Vector2f v);
 
 #endif // NORMALIZEUTIL_H

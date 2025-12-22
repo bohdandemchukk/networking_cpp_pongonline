@@ -1,4 +1,5 @@
 #include "Paddle.h"
+#include <algorithm>
 
 
 Paddle::Paddle(sf::Vector2f size, sf::Vector2f position) {
@@ -30,13 +31,13 @@ void Paddle::update(float dt) {
 }
 
 void Paddle::clamp(float windowHeight) {
-	if (m_shape.getPosition().y < 0.f) {
-		m_shape.setPosition({ static_cast<float>(m_shape.getPosition().x), 0.f });
-	}
 
-	if (m_shape.getPosition().y > windowHeight - m_shape.getSize().y) {
-		m_shape.setPosition({ static_cast<float>(m_shape.getPosition().x), windowHeight - m_shape.getSize().y });
-	}
+	auto pos{ m_shape.getPosition() };
+	float paddleLength{ m_shape.getSize().y };
+	
+	pos.y = std::clamp(pos.y, 0.f, windowHeight - paddleLength);
+
+	m_shape.setPosition(pos);
 }
 
 void Paddle::draw(sf::RenderWindow& window) const {

@@ -11,9 +11,16 @@ class Game
 public:
 	Game();
 
+	void startGame();
+	void handleInput();
+	void findCollision();
+	void updateEntities(float dt);
+	void clampPlayers();
+	void clampBall();
+	void clampEntities();
 	void processEvents();
 	void render();
-	void update(float deltaTime);
+	void update(float dt);
 	void run();
 	
 	sf::Vector2f calculateCollision(const Paddle& paddle, const Ball& ball);
@@ -22,6 +29,7 @@ public:
 private:
 
 	sf::RenderWindow window;
+	float windowHeight{};
 	sf::Clock clock;
 
 	Paddle leftPlayer;

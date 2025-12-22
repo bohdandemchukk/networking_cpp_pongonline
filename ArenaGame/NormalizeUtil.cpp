@@ -1,0 +1,12 @@
+#include "NormalizeUtil.h"
+
+
+sf::Vector2f normalize(sf::Vector2f v) {
+		
+	float len{ sqrt(v.x * v.x + v.y * v.y) };
+
+	if (len != 0.f) v /= len;
+
+	return v;
+
+}
