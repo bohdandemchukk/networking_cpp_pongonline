@@ -20,6 +20,9 @@ public:
 	void bounceY();
 
 	sf::FloatRect getBounds() const;
+	void setPosition(sf::Vector2f pos);
+	sf::Vector2f getPosition() const;
+	float getRadius() const;
 
 	void clamp(float windowHeight);
 

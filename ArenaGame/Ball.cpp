@@ -9,6 +9,19 @@ Ball::Ball(float radius, sf::Vector2f position)
 	
 }
 
+sf::Vector2f Ball::getPosition() const {
+	return m_shape.getPosition();
+}
+
+void Ball::setPosition(sf::Vector2f pos) {
+	m_shape.setPosition(pos);
+}
+
+float Ball::getRadius() const {
+	return m_shape.getRadius();
+}
+
+
 sf::Vector2f Ball::getDirection() {
 	return m_ballDirection;
 }

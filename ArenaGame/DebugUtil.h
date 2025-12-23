@@ -8,5 +8,10 @@ std::ostream& operator<<(std::ostream& os, const sf::Vector2f& v) {
 	return os;
 }
 
+std::ostream& operator<<(std::ostream& os, const sf::Vector2u& v) {
+	os << "(" << v.x << ", " << v.y << ")";
+	return os;
+}
+
 
 #endif // DEBUGUTIL_H

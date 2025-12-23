@@ -13,6 +13,7 @@ public:
 	
 	void update(float dt);
 
+	void setPosition(sf::Vector2f pos);
 
 	sf::FloatRect getBounds() const;
 

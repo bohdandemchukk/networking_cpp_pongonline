@@ -47,3 +47,7 @@ void Paddle::draw(sf::RenderWindow& window) const {
 sf::FloatRect Paddle::getBounds() const {
 	return m_shape.getGlobalBounds();
 }
+
+void Paddle::setPosition(sf::Vector2f pos) {
+	m_shape.setPosition(pos);
+}
