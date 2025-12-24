@@ -128,17 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArenaGame.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="NormalizeUtil.cpp" />
-    <ClCompile Include="Paddle.cpp" />
+    <ClCompile Include="LocalGame.cpp" />
+    <ClCompile Include="SfmlInput.cpp" />
+    <ClCompile Include="SfmlRenderer.cpp" />
+    <ClCompile Include="Simulation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ball.h" />
     <ClInclude Include="DebugUtil.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="NormalizeUtil.h" />
-    <ClInclude Include="Paddle.h" />
+    <ClInclude Include="LocalGame.h" />
+    <ClInclude Include="GameConfig.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="SfmlInput.h" />
+    <ClInclude Include="SfmlRenderer.h" />
+    <ClInclude Include="Simulation.h" />
+    <ClInclude Include="Types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
