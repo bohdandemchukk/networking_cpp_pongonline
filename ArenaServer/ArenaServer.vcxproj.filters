@@ -15,60 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArenaGame.cpp">
+    <ClCompile Include="..\ArenaGame\MainServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LocalGame.cpp">
+    <ClCompile Include="..\ArenaGame\PongServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Simulation.cpp">
+    <ClCompile Include="..\ArenaGame\ServerSession.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SfmlInput.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SfmlRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NetClient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NetworkGame.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\ArenaGame\Simulation.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LocalGame.h">
+    <ClInclude Include="..\ArenaGame\PongServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugUtil.h">
+    <ClInclude Include="..\ArenaGame\ServerSession.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
+    <ClInclude Include="..\ArenaGame\GameConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameConfig.h">
+    <ClInclude Include="..\ArenaGame\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameState.h">
+    <ClInclude Include="..\ArenaGame\NetProtocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Simulation.h">
+    <ClInclude Include="..\ArenaGame\Simulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SfmlInput.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SfmlRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NetProtocol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NetClient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkGame.h">
+    <ClInclude Include="..\ArenaGame\Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

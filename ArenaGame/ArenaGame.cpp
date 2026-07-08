@@ -1,9 +1,9 @@
 #include <SFML/Graphics.hpp>
-#include "LocalGame.h"
+#include "NetworkGame.h"
 
 int main()
 {
-    LocalGame game{};
+    NetworkGame game{};
     game.run();
 
     return 0;
